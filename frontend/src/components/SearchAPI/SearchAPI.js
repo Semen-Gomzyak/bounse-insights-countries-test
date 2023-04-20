@@ -1,12 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://frabjous-pudding-cfcda6.netlify.app/:3001/';
-
-// BASE_URL = 'https://
-
 
 export const SearchAllCountries = async () => {
-  const serverDataURL = `${BASE_URL}api/countries/`;
+  const serverDataURL = `$https://frabjous-pudding-cfcda6.netlify.app:3001/api/countries/`;
   try {
     const server = await axios.get(serverDataURL);
     const data = await server.data;
@@ -22,7 +18,7 @@ export const SearchCountryAPI = async name => {
   if (name === '' || name === null) {
     return SearchAllCountries();
   }
-  const serverDataURL = `${BASE_URL}api/countries/?country=${name}`;
+  const serverDataURL = `$https://frabjous-pudding-cfcda6.netlify.app:3001/api/countries/?country=${name}`;
   try {
     const server = await axios.get(serverDataURL);
     const data = await server.data;
