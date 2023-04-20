@@ -1,0 +1,17 @@
+{
+  "name": "my-app",
+  "scripts": {
+    "start": "npm run start"
+  },
+  "env": {
+    "PORT": "3000"
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "directories": {
+    "public": "frontend/build"
+  }
+}
