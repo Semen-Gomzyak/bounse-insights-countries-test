@@ -1,3 +1,3 @@
 [build]
-  command = "gnome-terminal --tab --title='Backend' --working-directory=./backend -- npm i && npm run start ; gnome-terminal --tab --title='Frontend' --working-directory=./frontend -- npm i && npm run build"
+  build = "xterm -e 'cd backend && npm i && npm run start' & xterm -e 'cd frontend && npm i && npm run build' & wait"
   publish = "frontend/build"
