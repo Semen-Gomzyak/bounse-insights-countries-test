@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3001/';
+const BASE_URL = 'https://frabjous-pudding-cfcda6.netlify.app/:3001/';
 
 // BASE_URL = 'https://
 
