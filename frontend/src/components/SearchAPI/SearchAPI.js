@@ -4,11 +4,18 @@ const BASE_URL = 'https://frabjous-pudding-cfcda6.netlify.app/';
 
 // BASE_URL = 'https://https://frabjous-pudding-cfcda6.netlify.app/
 
+const axiosInstance = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+    Origin: 'https://frabjous-pudding-cfcda6.netlify.app/',
+  },
+});
 
 export const SearchAllCountries = async () => {
-  const serverDataURL = `${BASE_URL}api/countries/`;
+  const serverDataURL = `api/countries/`;
   try {
-    const server = await axios.get(serverDataURL);
+    const server = await axiosInstance.get(serverDataURL);
     const data = await server.data;
 
     return data;
