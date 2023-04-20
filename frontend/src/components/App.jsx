@@ -17,8 +17,8 @@ export const App = ({info}) => {
   return (
     <Routes>
       <Route path="/" exact element={<HeaderAll />} />
-      <Route path="countries" element={<CountrySearch />} />
-      <Route path="countries/:name"  element={<CountriesDetails nameitem={info}/>} />
+      <Route path="/countries" element={<CountrySearch />} />
+      <Route path="/countries/:name"  element={<CountriesDetails nameitem={info}/>} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
     );
