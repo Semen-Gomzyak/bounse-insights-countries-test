@@ -6,10 +6,7 @@ const BASE_URL = 'https://frabjous-pudding-cfcda6.netlify.app/';
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-    Origin: 'https://frabjous-pudding-cfcda6.netlify.app/',
-  },
+  withCredentials: true,
 });
 
 export const SearchAllCountries = async () => {
