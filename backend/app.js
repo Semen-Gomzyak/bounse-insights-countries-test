@@ -8,8 +8,12 @@ const app = express();
 
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 
+app.use(cors());
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Origin',
+    'https://frabjous-pudding-cfcda6.netlify.app',
+  );
   res.header('Access-Control-Allow-Credentials', true);
   res.header(
     'Access-Control-Allow-Headers',
@@ -18,8 +22,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+
 app.use(logger(formatsLogger));
-app.use(cors());
 app.use(express.json());
 
 app.use('/api/countries', countriesRouter);
