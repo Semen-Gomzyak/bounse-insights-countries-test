@@ -10,9 +10,9 @@ const axiosInstance = axios.create({
 });
 
 export const SearchAllCountries = async () => {
-  const serverDataURL = `${BASE_URL}api/countries/`;
+  const serverDataURL = `api/countries/`;
   try {
-    const server = await axios.get(serverDataURL);
+    const server = await axiosInstance.get(serverDataURL);
     const data = await server.data;
 
     return data;
@@ -26,9 +26,9 @@ export const SearchCountryAPI = async name => {
   if (name === '' || name === null) {
     return SearchAllCountries();
   }
-  const serverDataURL = `${BASE_URL}api/countries/?country=${name}`;
+  const serverDataURL = `api/countries/?country=${name}`;
   try {
-    const server = await axios.get(serverDataURL);
+    const server = await axiosInstance.get(serverDataURL);
     const data = await server.data;
 
     return data;
