@@ -1,3 +1,4 @@
+
 [build]
-  command = "cd frontend && nohup npm i && nohup npm run build"
+  command = "cd frontend && npm i && npm run build "
   publish = "frontend/build"

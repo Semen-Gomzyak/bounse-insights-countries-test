@@ -1,8 +1,13 @@
+
+// ============ GET REQUEST to SERVER(backend) ===================
+
+
 import axios from 'axios';
 
-const BASE_URL = 'https://countries-test.onrender.com/';
 
-// BASE_URL = 'https://frabjous-pudding-cfcda6.netlify.app/
+
+const BASE_URL = 'https://countries-test.onrender.com/'; 
+
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -23,7 +28,7 @@ export const SearchAllCountries = async () => {
 
 
 export const SearchCountryAPI = async name => {
-  if (name === '' || name === null) {
+    if(!name) {
     return SearchAllCountries();
   }
   const serverDataURL = `api/countries/?country=${name}`;
@@ -36,4 +41,7 @@ export const SearchCountryAPI = async name => {
     console.log(error);
   }
 };
+
+
+
 
