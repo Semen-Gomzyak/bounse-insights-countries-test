@@ -31,7 +31,7 @@ export const SearchCountryAPI = async name => {
     if(!name) {
     return SearchAllCountries();
   }
-  const serverDataURL = `api/countries/?country=${name}`;
+  const serverDataURL = `api/countries/?country=${name}&`;
   try {
     const server = await axiosInstance.get(serverDataURL);
     const data = await server.data;
