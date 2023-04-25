@@ -42,10 +42,9 @@ const CountrySearch = () => {
     setLoader(true);
     const data = await SearchCountryAPI(name);
   
-    const results = await data.sort((x, y) =>
-      x.name.common.localeCompare(y.name.common)
+    const results = await data?.sort((x, y) =>
+      x?.name?.common?.localeCompare(y.name.common)
     );
- 
     setCountries(results);
    
     if (!results.length) {
@@ -71,7 +70,6 @@ const CountrySearch = () => {
     pageNumbers.push(i);
   }
 
-
   return (
     <main>
       <section>
@@ -80,26 +78,25 @@ const CountrySearch = () => {
           searchCountryValue={countriesName}
           onChang={onChang}
         />
-        {loader && <Loader />}
         {error && (
           <p className={CountrySearchSCSS.p}>
-            Sorry, we didn't find anything. Try again.
+            No results found. Please try again.
           </p>
         )}
 
+        {loader && <Loader />}
         {countries.length > 0 && (
           <>
-          <ul className={CountryListSCSS.list}>
-            {getPageData().map(country => (
-              <CountryItem key={nanoid()} country={country}></CountryItem>
-            ))}
-          </ul>
+            <ul className={CountryListSCSS.list}>
+              {getPageData().map(country => (
+                <CountryItem key={nanoid()} country={country}></CountryItem>
+              ))}
+            </ul>
 
-          <nav>
+            <nav>
               <ul className={CountryListSCSS.pagination}>
                 {pageNumbers.map(number => (
                   <li
-                
                     key={number}
                     className={
                       currentPage === number
@@ -108,16 +105,14 @@ const CountrySearch = () => {
                     }
                     onClick={() => handlePageChange(number)}
                   >
-                      <button className={ CountryListSCSS.buttonitem
-                    }>
-                    {number}
+                    <button className={CountryListSCSS.buttonitem}>
+                      {number}
                     </button>
                   </li>
                 ))}
               </ul>
             </nav>
           </>
-
         )}
       </section>
     </main>

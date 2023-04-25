@@ -1,7 +1,6 @@
 
 // ============ GET REQUEST to SERVER(backend) ===================
 
-
 import axios from 'axios';
 
 
@@ -22,8 +21,7 @@ export const SearchAllCountries = async () => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    return error
+    return []
   }
 };
 
@@ -39,8 +37,7 @@ export const SearchCountryAPI = async name => {
 
     return data;
   } catch (error) {
-    console.log(error);
-    return error;
+    return []
   }
 };
 

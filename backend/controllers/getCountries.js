@@ -16,8 +16,7 @@ const searchAllCountries = async (req, res, next) => {
 
     return res.status(200).json(data);
   } catch (error) {
-    console.log(error);
-    return res.status(404);
+    return res.status(400).send('Error 400: Country not found');
   }
 };
 
