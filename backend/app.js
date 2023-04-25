@@ -14,7 +14,6 @@ app.use(function (req, res, next) {
   res.header(
     'Access-Control-Allow-Origin',
     'https://frabjous-pudding-cfcda6.netlify.app',
-    'http://localhost:3000/',
   );
   res.header('Access-Control-Allow-Credentials', true);
   res.header(
