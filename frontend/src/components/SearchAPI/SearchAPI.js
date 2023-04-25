@@ -23,6 +23,7 @@ export const SearchAllCountries = async () => {
     return data;
   } catch (error) {
     console.log(error);
+    return error
   }
 };
 
@@ -39,6 +40,7 @@ export const SearchCountryAPI = async name => {
     return data;
   } catch (error) {
     console.log(error);
+    return error;
   }
 };
 

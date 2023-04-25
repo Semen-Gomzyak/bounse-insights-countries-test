@@ -17,6 +17,7 @@ const searchAllCountries = async (req, res, next) => {
     return res.status(200).json(data);
   } catch (error) {
     console.log(error);
+    return res.status(404);
   }
 };
 
