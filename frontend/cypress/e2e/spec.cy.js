@@ -12,7 +12,7 @@ describe('template spec', () => {
   it('displays an error message if search term is invalid', () => {
     cy.get('input[type="text"]').type('$$$');
     cy.get('button[type="submit"]').click();
-    // cy.contains('p', 'Invalid search term. Please try again.');
+    cy.contains('p', 'No results found. Please try again.');
   });
 
   it('allows users to clear the search results', () => {
@@ -32,7 +32,7 @@ describe('template spec', () => {
     it('displays a message when no results are found', () => {
       cy.get('input[type="text"]').type('zzzzzz');
       cy.get('button[type="submit"]').click();
-      // cy.contains('p', 'No results found. Please try again.');
+      cy.contains('p', 'No results found. Please try again.');
     });
   
     it('filters the search results when a filter is selected', () => {
